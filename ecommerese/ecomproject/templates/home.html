@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+<img src="{% static 'images/myimages.jpg' %}" alt="walpaper_image" style="width:1600px; height:500px;">
+</div>
+
+<div>
+    <h1 style="text-align:center;color:red">explore our product collection</h1>
+    <p>An online store description generator is a simple tool that will help you create your own online store. With the generator you can create a short and concise description for your store that will attract and convince potential customers. The generator uses artificial intelligence to generate original ideas, is intuitive and easy to use, and delivers professional-looking results in just a few seconds.</p>
+</div>
+
+<div class="container">
+    {% for product in products %}
+    {{product.name}}
+    {% endfor %}
+    <img src="{{product.image.url}}">
+</div>
+
+{% endblock %}
